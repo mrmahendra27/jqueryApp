@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <script src="/assets/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Jquery Effects And Animation</h1>
+    </header>
+    <div class="container">
+        <button id="fadein">Fade In</button>
+        <button id="fadeout">Fade Out</button>
+        <button id="fadetoggle">Fade Toggle</button>
+        <hr>
+        <button id="slideup">Slide Up</button>
+        <button id="slidedown">Slide Down</button>
+        <button id="slidetoggle">Slide Toggle</button>
+        <button id="slidestop">Slide Stop</button>
+        <hr>
+        <div id="box">
+            <h1>Helo</h1>
+        </div>
+        <hr>
+        <button id="moveLeft">Move Left</button>
+        <button id="moveRight">Move Right</button>
+        <button id="moveAround">Move Around</button>
+        <hr>
+        <div id="box2"><h1>hi</h1></div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            //fade
+            $('#fadein').attr('disabled', 'disabled');
+            $('#fadeout').click(function(){
+                $('#box').fadeOut(2000, function(){
+                    $('#fadeout').text('Its Gone')
+                    $('#fadein').removeAttr('disabled');
+                })
+            });
+            $('#fadein').click(function(){
+                $('#box').fadeIn(2000, function(){
+                    $('#fadein').text('Its Back')
+                    $('#fadein').attr('disabled', 'disabled');
+                })
+            });
+            $('#fadetoggle').click(function(){
+                $('#box').fadeToggle(1000);
+            });
+
+            //slide
+            $('#slidedown').attr('disabled', 'disabled');
+            $('#slideup').click(function(){
+                $('#box').slideUp(2000, function(){
+                    $('#slideup').text('Its Back')
+                    $('#slidedown').removeAttr('disabled');
+                })
+            });
+            $('#slidedown').click(function(){
+                $('#box').slideDown(2000, function(){
+                    $('#slidedown').text('Its Gone')
+                    $('#slidedown').attr('disabled', 'disabled');
+                })
+            });
+            $('#slidetoggle').click(function(){
+                $('#box').slideToggle(1000);
+            });
+            $('#slidestop').click(function(){
+                $('#box').stop();
+            });
+
+            //animate
+            $('#moveLeft').click(function (e) { 
+                $('#box2').animate({
+                    left: 0,
+                    height: '100px',
+                    width: '100px',
+                    opacity: '1',
+                })
+            });
+
+            $('#moveRight').click(function (e) { 
+                console.log('hi');
+                $('#box2').animate({
+                    left: 400,
+                    height: '120px',
+                    width: '120px',
+                    opacity: '0.5',
+                })
+            });
+
+            $('#moveAround').click(function (e) {  
+                var box = $('#box2');
+                box.animate({
+                    left: 300
+                })
+                box.animate({
+                    top: 300
+                })
+                box.animate({
+                    top:0,
+                    left: 300
+                })
+                box.animate({
+                    left: 0,
+                    top: 0
+                })
+            })
+        });
+    </script>
+</body>
+
+</html>

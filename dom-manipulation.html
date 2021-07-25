@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <script src="/assets/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Jquery DOM Manipuluations</h1>
+    </header>
+    <div class="container">
+        <button id="button1">Button1</button>
+        <p class="paragraph1">Mahe ipsum dolor sit amet, consectetur adipiscing elit. Quisque id lectus luctus, condimentum sapien faucibus, bibendum ligula. In hac habitasse platea dictumst. <span>Quisque ullamcorper</span> congue consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+		<p class="paragraph2">lol ipsum dolor sit ame  t, consectetur adipiscing elit. Quisque id lectus luctus, condimentum sapien faucibus, bibendum ligula. In hac habitasse platea dictumst. <span>Quisque ullamcorper</span> congue consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div id="mydiv"></div>
+        <input type="text" name="name" id="name">
+        <ul>
+            <li>List Items</li>
+            <li>List Items</li>
+            <li>List Items</li>
+            <li>List Items</li>
+            <li>List Items</li>
+        </ul>
+        <ol id="users">
+        </ol>
+        <a href="http://google.com">Google</a>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#button1').click(function (e) { 
+                // $('.paragraph1').addClass('myClass');
+                // $('.paragraph1').removeClass('myClass');
+                $('.paragraph1').toggleClass('myClass');
+            });
+            // $('#mydiv').text ('Hello');
+            // $('#mydiv').html('<h1>Hello</h1>');
+            // alert($('#mydiv').text());
+            // $('ul').append('<li>New List</li>')
+            // $('ul').prepend('<li>Latest New List</li>')
+            // $('.paragraph1').appendTo('.paragraph2')
+            // $('.paragraph1').prependTo('.paragraph2');
+            // $('ul').before('<h4>Before</h4>');
+            // $('ul').after('<h4>After</h4>');
+            // $('ul').empty();
+            // $('ul').detach();
+            // $('a').attr('target', '_blank')
+            // alert($('a').attr('href'))
+            // $('a').removeAttr('target')
+            // $('p').wrap('<strong>');
+            // $('p').wrapAll('<strong>');
+            $('#name').keyup(function(e) {
+                var code = e.which;
+                if(code == 13){
+                    e.preventDefault();
+                    $('ul').append('<li>' + e.target.value +  '</li>')
+                }
+            });
+
+            // var myArray = ['Mahendra', 'Vinayak', 'Rahul', 'Pranay'];
+            // $.each(myArray, function (key, value) { 
+            //     $('#users').append('<li>' + value +  '</li>')
+            // });
+
+            // var newArray = $('ul li').toArray();
+            // $.each(newArray, function (key, value) { 
+            //     $('#users').append(value);
+            // });
+        });
+    </script>
+</body>
+
+</html>

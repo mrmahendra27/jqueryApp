@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <script src="/assets/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Jquery Css Selector</h1>
+    </header>
+    <div class="container">
+        <h1 id="heading1">Heading One</h1>
+		<p id="paragraph1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque id lectus luctus, condimentum sapien faucibus, bibendum ligula. In hac habitasse platea dictumst. <span>Quisque ullamcorper</span> congue consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+		<h1 class="heading2">Heading Two</h1>
+		<p class="paragraph2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque id lectus luctus, condimentum sapien faucibus, bibendum ligula. In hac habitasse platea dictumst. <span>Quisque ullamcorper</span> congue consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+        <ul id="lists">
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+        </ul>
+
+        <a href="http://google.com">Google</a>
+    </div>
+
+    <script>
+        $('p span').css('color', 'white');
+        $('ul#lists li:first').css('color', 'orange');
+        $('ul#lists li:last').css('color', 'green');
+        $('ul#lists li:odd').css('background-color', 'blue');
+        $('ul#lists li:even').css('background-color', 'purple');
+        $('ul#lists li:nth-child(2n)').css('list-style', 'none');
+        $('[href]').css('color', 'lightblue');
+    </script>
+</body>
+</html>

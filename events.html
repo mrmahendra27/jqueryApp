@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <script src="/assets/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Jquery Events</h1>
+    </header>
+    <div class="container">
+        <h1>Mouse Events</h1>
+        <button id="button1">Button One</button>
+        <button id="button2">Button Two</button>
+        <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque id lectus luctus,
+            condimentum sapien faucibus, bibendum ligula. In hac habitasse platea dictumst. <span>Quisque
+                ullamcorper</span> congue consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <h1 class="cord"></h1>
+        <hr>
+        <div class="form">
+            <h1>Form Events</h1>
+            <form>
+                <label>Name</label><br>
+                <input type="text" name="name" id="name"><br>
+                <label>Email</label><br>
+                <input type="text" name="email" id="email"><br>
+                <label>Gender</label><br>
+                <select name="gender" id="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select><br>
+                <input type="submit" value="submit" title="submit">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // $('#button1').click(() => {
+            //     alert('button1 clicked'); 
+            // });
+
+            // $('#button2').on('click', function(){
+            //     $('div.container h1').toggle();
+            // });
+
+            // $('#button1').dblclick(() => {
+            //     $('.paragraph').toggle();
+            // });
+
+            // $('#button2').hover(() => {
+            //     $('.paragraph').toggle();
+            // });
+
+            // $('#button1').on('mouseenter', () => {
+            //     $('.paragraph').hide();
+            // });
+
+            // $('#button2').on('mouseleave',() => {
+            //     $('.paragraph').show();
+            // });
+
+            // $('#button1').on('mousemove', function(){
+            //     $('.paragraph').toggle();
+            // });
+
+            // $('#button1').on('mouseup', function(){
+            //     $('.paragraph').hide();
+            // });
+
+            // $('#button2').on('mousedown', function(){
+            //     $('.paragraph').show();
+            // });
+
+            // $('#button1').click(function (e) {
+            //     console.log(e.currentTarget.id);
+            // });
+
+            // $(document).mousemove(function(e){
+            //     $('.cord').html('Coordinates: Y: ' + e.clientY + ' X: ' + e.clientX);
+            // });
+
+            $('input').focus(function (e) {
+                $(this).css('background', 'blue')
+            });
+
+            $('input').blur(function (e) {
+                $(this).css('background', 'white')
+            });
+
+            $('input').keyup(function (e) {
+                console.log(e.target.value)
+            });
+
+            $('select#gender').change(function (e) {
+                console.log(e.target.value)
+            });
+
+            $('form').submit(function(e){
+                e.preventDefault();
+                var name = $('#name').val();
+                var email = $('#email').val();
+                var gender = $('#gender').val();
+
+                console.log([name, email, gender])
+            });
+        });
+    </script>
+</body>
+
+</html>
